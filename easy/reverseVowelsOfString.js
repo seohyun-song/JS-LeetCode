@@ -1,7 +1,8 @@
 /*
     Write a function that takes a string as input and reverse only the vowels of a string.
     Note: The vowels does not include the letter 'y'.
-
+    
+    **string is 'array-like'!!!!
  */
 var reverseVowels = function(s) {
     //input을 배열로 만듦
