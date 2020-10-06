@@ -23,8 +23,8 @@ var numUniqueEmails = function(emails) {
         idx = emails[i].indexOf('@');
         //@이전의 문자열, localName
         localName = emails[i].substring(0,idx).split('');
-        //@이후의 문자열, domainName임시저장
-        domainName = emails[i].substring(idx+1, emails[i].length);
+        //@을 포함한 이후의 문자열, domainName임시저장
+        domainName = emails[i].substring(idx);
 
         //조건에 맞게 localName값을 변경
         for(var j=localName.length-1; j>=0; j--){
@@ -32,7 +32,7 @@ var numUniqueEmails = function(emails) {
             if(localName[j] == '+') {localName.splice(j);}
         }
         //email address 재할당
-        emails[i]=localName.join('')+'@'+domainName;
+        emails[i]=localName.join('')+domainName;
     }
     //get a number of unique email addresses
     return new Set(emails).size;
