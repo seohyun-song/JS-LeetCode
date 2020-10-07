@@ -18,6 +18,7 @@ var validPalindrome = function(s) {
             var tmp1 = s.substring(startIdx+1,endIdx+1);
             //endIdx의 문자를 제거한 문자열을 tmp2에 임시저장
             var tmp2 = s.substring(startIdx,endIdx);
+            
             //palindrome인지 검사. tmp1 혹은 tmp2의 경우 중 하나라도 참이면 참을 반환
             return tmp1 == tmp1.split('').reverse().join('') || tmp2 == tmp2.split('').reverse().join('');
         }
