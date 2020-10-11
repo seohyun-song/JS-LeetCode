@@ -12,6 +12,10 @@
 var powerfulIntegers = function(x, y, bound) {
     var set = new Set();
     var result = [];
+    /*
+        x=1, y=1 -> 1^i+1^j=2이므로 i,j값의 범위가 상관없음
+        x=2, 2^i <= 10^6 -> i<20 
+     */
     for(var i=0;i<20 && Math.pow(x,i)<=bound;i++){
         for(var j=0;j<20 && Math.pow(y,j)<=bound;j++){
             var powSum = Math.pow(x,i)+Math.pow(y,j);
