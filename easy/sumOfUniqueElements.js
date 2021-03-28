@@ -15,6 +15,19 @@
     Constraints:
     ● 1 <= nums.length <= 100
     ● 1 <= nums[i] <= 100
+
+
+    .reduce(): 배열의 각 요소에 대해 주어진 리듀서함수를 실행하고 하나의 결과값을 반환함/
+    arr.reduce(callback[, initialValue])
+    - callback: 배열의 각 요소에 대해 실행할 함수, 다음 네 가지 인수를 받습니다. 
+        • accumulator: 콜백의 반환값을 누적합니다. 콜백의 이전 반환값 또는, 콜백의 첫 번째 호출이면서 initialValue를 제공한 경우에는 initialValue의 값
+        • currentValue: 처리할 현재 요소
+    - 반환값: 누적 계산의 결과 값
+
+    // 누산기 
+    arr.reduce(funciton(acumulator, currentValue) {
+        return accumulator + currentValue;
+    })
  */
 
 var sumOfUnique = function(nums) {
