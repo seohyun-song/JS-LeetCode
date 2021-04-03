@@ -14,10 +14,17 @@
 
     Constraints:
     1 <= lowLimit <= highLimit <= 105
+
+    ● .fill(): 배열의 시작 인덱스 부터 끝 인덱스의 이전까지 정적인 값 하나로 채웁니다. 
+    arr.fill(val, startIdx, endIdx)
+    - startIdx : (default: 0)
+    - endIdx : (defualt: this.length)
+
+    ● .map: 배열 내의 모든 요소 각각에 대하여 주어진 함수를 호출한 결과를 모아 새로운 배열을 반환 합니다. 
  */
 var countBalls = function(lowLimit, highLimit) {
-
     const arr = new Array(highLimit + 1).fill(0);
+
     while(lowLimit <= highLimit) {
         var idx = (lowLimit+'').split('').map(x => parseInt(x)).reduce((accumulator, currentValue) => accumulator + currentValue);
         arr[idx-1]++;
