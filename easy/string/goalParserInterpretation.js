@@ -48,10 +48,20 @@ var interpret = function(command) {
 };
 
 // 다른 사람 풀이 
-var interpret = function(command) {
-    let str = '';
-    let i = 0;
-    while( i < command.length) {
-
-    }
-}
+// var interpret = function(command) {
+//     let str = '';
+//     let i = 0;
+//     while( i < command.length) {
+//         if(command[i] == '(' && command[i+1] == ')') {
+//             str += 'o';
+//             i += 2;
+//         } else if(command[i] == '(' && command[i+1] == 'a') {
+//             str += 'al';
+//             i += 4;
+//         } else {
+//             str += 'G';
+//             i++;
+//         }
+//     }
+//     return str;
+// }
