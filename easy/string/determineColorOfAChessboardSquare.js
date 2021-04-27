@@ -14,6 +14,8 @@
     coordinates.length == 2
     'a' <= coordinates[0] <= 'h'
     '1' <= coordinates[1] <= '8'
+
+    ** str.includes() 
  */
 /**
  * @param {string} coordinates
