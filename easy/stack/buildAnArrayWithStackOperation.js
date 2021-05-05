@@ -36,10 +36,9 @@
     
     while(i <= target[target.length -1]) {
         if(target.includes(i)) {
-             arr.push('Push');
-        } else {
             arr.push('Push');
-            arr.push('Pop');
+        } else {
+            arr.push('Push', 'Pop');
         }
         i++;
     }
