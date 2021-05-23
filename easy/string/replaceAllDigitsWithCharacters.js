@@ -33,7 +33,7 @@
 
     ● "string".charCodeAt([문자열 자릿수]): 문자열을 아스키 코드로 변환
     ● String.fromCharCode([아스키코드 값]): 아스키코드를 문자열로 변환
-    ● isNaN(): NaN을 구별하는 메소드. NaN이면 true를 반환, NaN이 아니면 false를 반환
+    ● isNaN(): 매개변수가 숫자인지 검사하는 함수. 매개변수가 숫자가 아니면 true, 숫자이면 false를 반환
     ● arr.map(callback(currentValue[, index[, array]]))
     배열 내의 모든 요소 각각에 대하여 주어진 함수를 호출한 결과를 모아 새로운 배열을 반환합니다. 
     - callback: 새로운 배열 요소를 생성하는 함수. 다음 세 가지 인수를 가질 수 있습니다. 
