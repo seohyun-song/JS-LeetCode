@@ -71,3 +71,13 @@ ParkingSystem.prototype.addCar = function(carType) {
  * var obj = new ParkingSystem(big, medium, small)
  * var param_1 = obj.addCar(carType)
  */
+
+// 다른 사람 풀이
+var ParkingSystem = function(big, medium, small) {
+    this.remainingSpaces = [big, medium, small];
+};
+
+// 후위 연산자
+ParkingSystem.prototype.addCar = function(carType) {
+    return (this.remainingSpaces[carType - 1]--) > 0
+};
