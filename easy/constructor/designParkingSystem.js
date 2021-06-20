@@ -27,6 +27,10 @@
     0 <= big, medium, small <= 1000
     carType is 1, 2, or 3
     At most 1000 calls will be made to addCar
+
+
+    자바스크립트에서 생성자 함수로부터 만들어진 객체는 그 생성자 함수의 프로토타입 객체를 상속합니다. 즉, 
+    모든 인스턴스는 해당 생성자 함수의 프로토타입 객체의 속성과 메소드를 사용할 수 있습니다. 
  */
 /**
  * @param {number} big
