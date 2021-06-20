@@ -33,7 +33,9 @@
  * @param {number} medium
  * @param {number} small
  */
- var ParkingSystem = function(big, medium, small) {
+
+var ParkingSystem = function(big, medium, small) { // 생성자 함수
+    // 초기 상태 지정
     this.big = big;
     this.medium = medium;
     this.small = small;
@@ -43,10 +45,11 @@
  * @param {number} carType
  * @return {boolean}
  */
+// ParkingSystem의 프로토타입에 메소드 추가
 ParkingSystem.prototype.addCar = function(carType) {
     if(carType == 1 && this.big != 0) {
         this.big--;
-        return true;      
+        return true;
     }
     if(carType == 2 && this.medium != 0) {
         this.medium--;
