@@ -31,10 +31,12 @@
  */
 var countStudents = function (students, sandwiches) {
   while (students.length) {
+    // 맨 앞에 있는 학생이 맨 위의 샌드위치를 선호하면 그것을 가지고 줄을 떠남
     if (sandwiches[0] == students[0]) {
       students.shift();
       sandwiches.shift();
     } else {
+      // 그렇지 않으면 샌드위치를 선택하지 않고 줄 맨 끝으로 감
       students.push(students.shift());
     }
     // 런치를 못 먹는 학생들 발생
