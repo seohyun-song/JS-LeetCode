@@ -8,7 +8,15 @@
 
   Return the original array arr. It can be proved that the answer exists and is unique.
  * Hint: Since that encoded[i] = arr[i] XOR arr[i+1], then arr[i+1] = encoded[i] XOR arr[i].
- */
+  a^b = c일 때,(a,b,c가 한 쌍이라고 보면됨) 셋 중 아무거나 두 개를 골라 XOR(^)연산을 하면 결과는 나머지 하나가 나옴!!! 
+  
+  let a = 5;
+  let b = 3;
+  let c = a^b;
+  console.log(c);
+  console.log(a^c); // b
+  console.log(b^c); // a
+*/
 /**
  * @param {number[]} encoded
  * @param {number} first
