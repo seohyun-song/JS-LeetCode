@@ -1,48 +1,57 @@
-/**
- * 20. Valid Parentheses 
- * Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
-
+/*  
+    Given a string s containing just the characters '(', ')', '{', '}', '[', ']',
+    determine if input string valid.
     An input string is valid if:
+        1.왼쪽 괄호의 개수와 오른쪽 괄호의 개수가 같아야 함
+        2.같은 타입의 괄호에서 왼쪽 괄호는 오른쪽 괄호보다 먼저 나와야 한다.
+        3.서로 다른 타입의 괄호 쌍이 서로를 교차하면 안된다.
+    Algorithm: Stack
+        1.문자를 저장하는 스택을 준비함. 처음에는 공백상태가 되어야한다.
+        2.입력 문자열을 하나씩 읽어 왼쪽 괄호와 만나면 스택에 삽입
+        3.오른쪽 괄호를 만나면 pop()연산으로 가장 최근에 삽입한 괄호를 꺼낸다. 이 때
+        스택이  비어 있다면 조건 2에 위배
+        4.꺼낸 괄호가 오른쪽 괄호와 짝이 맞이 않아면 조건3에 위반
+        5.끝까지 처리했는데 스택이 비어 있지 않으면 조건 1에 위배
 
-    Open brackets must be closed by the same type of brackets.
-    Open brackets must be closed in the correct order.
-    Every close bracket has a corresponding open bracket of the same type.
- * Example 1:
-    Input: s = "(]"
-    Output: false
-
- * Object.keys(obj): 객체의 키만 담은 배열을 반환
-    Object.values(obj): 객체의 값만 담은 배열을 반환
-
- */
-/**
- * @param {string} s
- * @return {boolean}
  */
 var isValid = function (s) {
-  let stack = [];
-  let brackets = {
-    "{": "}",
-    "[": "]",
-    "(": ")",
-  };
-  for (let char of s) {
-    if (Object.keys(brackets).indexOf(char) != -1) {
-      // open brackets
-      stack.push(char);
-    } else if (Object.values(brackets).indexOf(char) != -1) {
-      // close brackets
-      if (stack.length == 0) {
-        // 닫는 태그가 먼저 올 수 없음
-        return false;
-      } else if (char != brackets[stack[stack.length - 1]]) {
-        // 짝이 안맞을 경우
-        return false;
-      } else {
-        stack.pop();
-      }
-    }
-  }
+	var ch = [];
+	var prev = "";
+	for (var i = 0; i < s.length; i++) {
+		if (s[i] == "(" || s[i] == "{" || s[i] == "[") {
+			ch.push(s[i]);
+		} else if (s[i] == ")" || s[i] == "}" || s[i] == "]") {
+			if (ch.length == 0) return false;
+			prev = ch.pop();
+			if (
+				(s[i] == ")" && prev != "(") ||
+				(s[i] == "}" && prev != "{") ||
+				(s[i] == "]" && prev != "[")
+			)
+				return false;
+		}
+	}
+	return ch.length == 0 ? true : false;
+};
 
-  return stack.length == 0 ? true : false;
+// refactoring(23/06/14)
+var isValid = function (s) {
+	const stack = [];
+	const brackets = {
+		"{": "}",
+		"(": ")",
+		"[": "]",
+	};
+	for (char of s) {
+		if (Object.keys(brackets).includes(char)) {
+			// open bracket
+			stack.push(char);
+		} else {
+			// close bracket
+			if (stack.length === 0) return false;
+			if (brackets[stack[stack.length - 1]] !== char) return false;
+			if (brackets[stack[stack.length - 1]] === char) stack.pop();
+		}
+	}
+	return stack.length === 0;
 };
