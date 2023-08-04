@@ -27,6 +27,7 @@ var removeTrailingZeros = function (num) {
 
 // 다른 풀이
 // index 접근
+// str.slice(beginIndex[, endIndex]): endIndex 직전까지 추출된 문사열을 담은 새로운 문자열 반환
 var removeTrailingZeros = function (num) {
 	let idx = num.length - 1;
 	while (idx) {
